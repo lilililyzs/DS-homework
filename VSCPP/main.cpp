@@ -24,7 +24,7 @@ int main(void) {
 	return 0;
 }
 
-#elif 1 // ÷–¥21
+#elif 0 // ÷–¥21
 #include "graph.h"
 int main(void) {
 	digraph DG ;
@@ -33,5 +33,20 @@ int main(void) {
 	DG.printVE();
 	DG.Find_directed_simple_circuit();
 	return 0;
+}
+#elif 1 // ÷–¥22
+#include "graph.h"
+int main(void) {
+	digraph DG;
+	DG.build_net_withADJM();
+	/*input:
+	8 11
+	0 1 0 2 1 3 2 3 3 4 3 5 4 5 4 6 5 6 5 7 6 7
+	0 1 2 0 2 3 1 3 2 2 3 1 3 4 2 3 5 4 4 5 1 4 6 2 5 6 2 5 7 1 6 7 3
+	*/
+	//DG.adjacenyMatrix.printMatrix();
+	DG.printWeightedMatrix();
+	DG.Prim();
+	DG.printVE();
 }
 #endif // 0
